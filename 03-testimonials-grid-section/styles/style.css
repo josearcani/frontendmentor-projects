@@ -1,0 +1,219 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@400;600&display=swap');
+
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* 
+===========
+Variables
+===========
+*/
+
+:root {
+  /* colors */
+  --p-violete: hsl(263, 55%, 52%);
+  --p-dark-grayish-blue: hsl(217, 19%, 35%);
+  --p-dark-blackish-blue: hsl(219, 29%, 14%);
+  /* neutral */
+  --ligth-gray: hsl(0, 0%, 81%);
+  --light-grayish-blue: hsl(210, 46%, 95%);
+  --neutral-white: hsl(0, 0%, 100%);
+  --text-verified-color: rgba(255,255,255, .5);
+  --text-quoted-color: hsl(0, 0%, 70%);
+  /* --neutral-hover: hsl(0, 0%, 100%); */
+  /* 
+  1. "Verified Graduate" has the same color as the person's 
+  name with 50% opacity
+  2. Review paragraphs inside the quotations have the same 
+  color as well, but are at 70% opacity
+  */
+
+  /* typography */
+  --ff-body: 'Barlow Semi Condensed', sans-serif;
+  --f-s-body: 0.8125rem;  /* 13px */
+  --f-bold: 600;
+  --f-normal: 400;
+  /* margin */
+  /* --margin-bottom-section: 7em; */
+}
+
+/* 
+=======
+Defaults
+=======
+*/
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--ff-body);
+  font-size: var(--f-s-body);
+  background-color: #d4d4d4;
+}
+
+ul {
+  list-style-type: none;
+}
+a {
+  text-decoration: none;
+  display: inline-block;
+}
+
+img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+h2 {
+  font-size: 0.875rem;
+}
+
+/* 
+1. Posicionamiento
+2. Modelo de caja
+3. Tipografia
+4. Visuales (boxshadow border-radius)
+5. otros
+*/
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+/*
+==========
+section
+==========
+*/
+
+section {
+  width: 85%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 3em;
+  margin-bottom: 3em;
+}
+
+.grid {
+  margin-top: 3em;
+  /* border: 1px solid red; */
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 2em
+  
+}
+
+/*
+==========
+articles
+==========
+*/
+
+.grid article {
+  border-radius: 5px;
+  padding: 2.125em;
+  box-shadow: 3px 4px 8px -4px black;
+}
+
+.one {
+  background-color: var(--p-violete);
+  position: relative;
+}
+.two {
+  background-color: var(--p-dark-grayish-blue);
+}
+.three {
+  background-color: var(--neutral-white);
+}
+.four {
+  background-color: var(--p-dark-blackish-blue);
+}
+.five {
+  background-color: var(--light-grayish-blue);
+}
+
+.one,
+.two,
+.four {
+  color: var(--neutral-white);
+}
+
+.three,
+.five {
+  color: var(--p-dark-grayish-blue);
+}
+
+.one::after {
+  content: '';
+  width: 90px;
+  height: 90px;
+  background-image: url(../images/bg-pattern-quotation.svg);
+  background-position: center;
+  background-size: cover;
+  top: 0;
+  right: 15px;
+  position: absolute;
+  z-index: 0;
+}
+
+/* author */
+.article__author {
+  display: grid;
+  grid-template-columns: 30px 1fr;
+  margin-bottom: 1.125em;
+  /* place-items: center; */
+}
+
+.article__name {
+  padding-left: 1em
+}
+
+.article__name p:first-child {
+  font-weight: var(--f-bold);
+}
+
+.article__name p:last-child {
+  font-weight: var(--f-normal);
+  color: var(--text-verified-color);
+  font-size: 0.625rem
+}
+
+.article__text h2 {
+  margin-bottom: 1.125em;
+}
+
+.article__text p:last-child {
+  color: var(--text-verified-color)
+}
+
+.three .article__name p:last-child,
+.five .article__name p:last-child {
+  font-weight: var(--f-normal);
+  color: var(--p-dark-grayish-blue)
+}
+
+.three .article__text p:last-child,
+.five .article__text p:last-child {
+  color: var(--p-dark-grayish-blue);
+}
+
+.article__image {
+  border-radius: 50%;
+  border: 1.5px solid hsl(264deg 82% 70%);
+  overflow: hidden;
+}
+
+/* text */
+.article__text {
+  position: relative;
+  z-index: 1;
+}

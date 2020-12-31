@@ -1,0 +1,18 @@
+header {
+  margin-bottom: 7em;
+}
+
+
+.countdown .card {
+  width: 125px;
+  height: 125px;
+}
+
+.card span {
+  font-size: 3.7rem;
+}
+
+
+main .countdown {
+  max-width: 750px;
+}

@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Raleway:wght@400;700&display=swap');
+
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* 
+===========
+Variables
+===========
+*/
+
+:root {
+  /* colors */
+  --Pale-Blue: hsl(243, 100%, 93%);
+  --Grayish-Blue: hsl(229, 7%, 55%);
+  --Dark-Blue: hsl(228, 56%, 26%);
+  --Very-Dark-Blue: hsl(229, 57%, 11%);
+  /* accent */
+  --ac-cyan: hsl(176, 68%, 64%);  /* (inside call-to-action gradient) */
+  --ac-blue: hsl(198, 60%, 50%);  /* (inside call-to-action gradient) */
+  --ac-red: hsl(0, 100%, 63%); /* (error) */
+  /* neutral */
+  --neutral-white: hsl(0, 0%, 80%);
+  --neutral-hover: hsl(0, 0%, 100%);
+
+  /* gradient */
+  --gradient: hsl(6, 100%, 80%) to hsl(335, 100%, 65%);
+  /* typography */
+  --ff-headings: 'Raleway', sans-serif;
+  --ff-body: 'Open Sans', sans-serif;
+  --f-s-body: 0.875rem; /* 14px */
+  --f-w-bold: 700;
+  --f-w-normal: 400;
+
+  /* margin */
+  --margin-bottom-section: 7em;
+}
+
+/* 
+=======
+Defaults
+=======
+*/
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--ff-body);
+  font-size: var(--f-s-body);
+  color: var(--neutral-white);
+  background-color: var(--p-dark-blue-bg2);
+}
+
+ul {
+  list-style-type: none;
+}
+a {
+  text-decoration: none;
+  display: inline-block;
+  color: var(--neutral-white);
+}
+
+img {
+  display: block;
+  width: 100%;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  letter-spacing: 0.25rem;
+  text-transform: capitalize;
+  line-height: 1.25;
+  margin-bottom: 0.85rem;
+  font-family: var(--ff-headings);
+}
+
+h1 {
+  font-size: 1.25rem;
+}
+
+h2 {
+  font-size: 1rem;
+}
+
+h3 {
+  font-size: 1rem;
+}
+
+a,
+p {
+  text-transform: capitalize;
+  line-height: 1.6;
+}
+
+/* 
+1. Posicionamiento
+2. Modelo de caja
+3. Tipografia
+4. Visuales (boxshadow border-radius)
+5. otros
+*/
+
+/* 
+=======
+Header
+=======
+*/

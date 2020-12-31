@@ -1,0 +1,8 @@
+.grid {
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-template-areas: 
+  'one one two five'
+  'three four four five';
+  grid-gap: 1.5em;
+}
