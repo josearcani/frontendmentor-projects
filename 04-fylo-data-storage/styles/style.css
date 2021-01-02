@@ -20,23 +20,15 @@ Variables
   --Grayish-Blue: hsl(229, 7%, 55%);
   --Dark-Blue: hsl(228, 56%, 26%);
   --Very-Dark-Blue: hsl(229, 57%, 11%);
-  /* accent */
-  --ac-cyan: hsl(176, 68%, 64%);  /* (inside call-to-action gradient) */
-  --ac-blue: hsl(198, 60%, 50%);  /* (inside call-to-action gradient) */
-  --ac-red: hsl(0, 100%, 63%); /* (error) */
   /* neutral */
-  --neutral-white: hsl(0, 0%, 80%);
-  --neutral-hover: hsl(0, 0%, 100%);
-
+  --neutral-white: #fff;
   /* gradient */
-  --gradient: hsl(6, 100%, 80%) to hsl(335, 100%, 65%);
+  --gradient: linear-gradient(to right,hsl(6, 100%, 80%), hsl(335, 100%, 65%));
   /* typography */
-  --ff-headings: 'Raleway', sans-serif;
-  --ff-body: 'Open Sans', sans-serif;
+  --ff: 'Raleway', sans-serif;
   --f-s-body: 0.875rem; /* 14px */
   --f-w-bold: 700;
   --f-w-normal: 400;
-
   /* margin */
   --margin-bottom-section: 7em;
 }
@@ -52,15 +44,19 @@ html {
 }
 
 body {
-  font-family: var(--ff-body);
+  background-color: var(--Very-Dark-Blue);
+  background-image: url(../images/bg-mobile.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-family: var(--ff);
   font-size: var(--f-s-body);
   color: var(--neutral-white);
-  background-color: var(--p-dark-blue-bg2);
 }
 
 ul {
   list-style-type: none;
 }
+
 a {
   text-decoration: none;
   display: inline-block;
@@ -72,34 +68,15 @@ img {
   width: 100%;
 }
 
-h1,
-h2,
-h3,
-h4 {
-  letter-spacing: 0.25rem;
-  text-transform: capitalize;
-  line-height: 1.25;
-  margin-bottom: 0.85rem;
-  font-family: var(--ff-headings);
+span {
+  display: inline-block;
+  font-weight: var(--f-w-bold);
 }
 
-h1 {
-  font-size: 1.25rem;
-}
-
-h2 {
-  font-size: 1rem;
-}
-
-h3 {
-  font-size: 1rem;
-}
-
-a,
-p {
+/* p {
   text-transform: capitalize;
   line-height: 1.6;
-}
+} */
 
 /* 
 1. Posicionamiento
@@ -111,6 +88,152 @@ p {
 
 /* 
 =======
-Header
+Container
 =======
 */
+
+.container {
+  width: 85%;
+  margin-left: auto;
+  margin-right: auto;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.inputs,
+.info {
+  background-color: var(--Dark-Blue);
+  margin-bottom: 1.15em;
+  border-radius: 15px;
+}
+
+.inputs {
+  border-top-right-radius: 90px;
+  padding: 3em 2em 2.8em 2.5em;
+}
+
+.logo {
+  width: 140px;
+  margin-bottom: 2em;
+}
+
+.input-container input[type='file'],
+.input-container input[type='submit'] {
+  display: none;
+}
+
+.icon {
+  background-color: var(--Very-Dark-Blue);
+  border-radius: 10px;
+  width: 50px;
+  height: 50px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.input-container > label {
+  margin-right: .9em;
+}
+
+.input-container > label:last-of-type {
+  margin-right: 0;
+}
+
+.icon-doc {
+  background-image: url(../images/icon-document.svg);
+}
+.icon-folder {
+  background-image: url(../images/icon-folder.svg);
+}
+.icon-cloud {
+  background-image: url(../images/icon-upload.svg);
+}
+
+/*
+=======
+Info
+=======
+*/
+
+.info {
+  padding: 2.5em 2em 3.25em 2.5em;
+  position: relative;
+}
+
+.info p {
+  text-align: center;
+  margin-bottom: 1.25em;
+}
+
+.progress-bar {
+  background-color: var(--Very-Dark-Blue);
+  border-radius: 10px;
+  height: 20px;
+  display: flex;
+  padding-left: .25em;
+  padding-right: .25em;
+  /* width: 90%; */
+  align-items: center;
+  margin-bottom: .7em;
+}
+
+.bar {
+  border-radius: 10px;
+  background-image: var(--gradient);
+  height: 14px;
+  width: 70%;
+  position: relative;
+}
+
+.bar::after {
+  content: '';
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: white;
+  position: absolute;
+  right: 2.5px;
+  top: calc(50% - 5px);
+}
+
+.space {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.75rem;
+}
+
+/*
+=======
+Floating card
+=======
+*/
+
+.card {
+  text-transform: uppercase;
+  color: black;
+  position: absolute;
+  width: 180px;
+  border-radius: 15px;
+  min-height: 70px;
+  top: 100%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: var(--neutral-white);
+}
+
+.card .rest {
+  font-size: 2.2rem;
+  color: initial;
+  margin-right: .25em;
+  vertical-align: sub;
+}
+
+.card p {
+  color: rgba(0, 0, 0, .5);
+  font-size: .75rem;
+  font-weight: var(--f-w-bold);
+  margin-top: 1em;
+  letter-spacing: 1px;
+}
