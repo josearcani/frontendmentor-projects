@@ -51,6 +51,8 @@ body {
   font-family: var(--ff);
   font-size: var(--f-s-body);
   color: var(--neutral-white);
+  min-height: 100vh;
+
 }
 
 ul {

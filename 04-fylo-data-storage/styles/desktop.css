@@ -1,0 +1,52 @@
+body {
+  background-image: url(../images/bg-desktop.png);
+  background-position: bottom;
+  background-size: contain;
+}
+
+.container {
+  border: 1px solid red;
+  width: 85%;
+  min-height: 65vh;
+  flex-direction: row;
+  align-items: flex-end;
+  gap: 2em
+}
+
+.inputs {
+  border-top-right-radius: 90px;
+  padding: 3em 2em 2.8em 2.5em;
+  width: 30%;
+}
+
+.info {
+  padding-right: 3em;
+  width: 45%;
+}
+
+.info > p {
+  text-align: left;
+}
+
+/*
+=======
+Floating card
+=======
+*/
+
+.card {
+  top: 0;
+  right: 0;
+  transform: translate(30%, -75%);
+}
+
+.card::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-top: 50px solid var(--neutral-white);
+  border-left: 50px solid transparent;
+  right: 0;
+  transform: translate(0%, -50%);
+}
