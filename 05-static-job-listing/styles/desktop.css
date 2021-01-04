@@ -1,0 +1,7 @@
+.container {
+  grid-column: 2 / 12;
+}
+
+.filters ul {
+  gap: 1.65em;
+}

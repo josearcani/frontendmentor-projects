@@ -80,6 +80,7 @@ span {
 .job-tags .tag,
 .filters .tag {
   font-weight: var(--f-w-bold);
+  cursor: pointer;
 }
 
 .info-contract,
@@ -89,6 +90,7 @@ span {
 
 .clear {
   font-weight: var(--f-w-bold);
+  cursor: pointer;
 }
 
 /*
@@ -102,6 +104,7 @@ Header
   background-image: url(../images/bg-header-mobile.svg);
   background-position: center;
   background-repeat: no-repeat;
+  background-size: cover;
   min-height: 156px;
   position: relative;
   margin-bottom: 2.5em;
@@ -172,8 +175,9 @@ Header
   border-radius: var(--border-radius);
 }
 
-.tools .tag:last-of-type {
-  margin-bottom: 0;
+.filters,
+.job-item {
+  box-shadow: 0 2px 5px rgba(0, 0, 0, .16), 0 2px 10px rgba(0, 0, 0, .12);
 }
 
 /*
@@ -230,6 +234,7 @@ Container
 items
 =======
 */
+
 .job-item {
   /* border: 1px solid red; */
   background-color: var(--white);
@@ -240,7 +245,6 @@ items
   margin-bottom: 3em;
   position: relative;
 }
-
 
 /* just when there is featured */
 .job-item::before {
@@ -253,14 +257,10 @@ items
   left: 0;
   border-top-left-radius: var(--border-radius);
   border-bottom-left-radius: var(--border-radius);
+  display: none;
 }
 
-/* .job-item > div {
-  margin-bottom: 1.4em;
-} */
-/* .job-item > div:last-of-type {
-  margin-bottom: 0;
-} */
+.special.job-item::before {display: block;}
 
 /* jobs info */
 .job-info > div {
@@ -278,6 +278,11 @@ items
   margin-right: 1.5em;
 }
 
+.job-flags {
+  display: none;
+}
+
+.special .job-flags {display: block;}
 .flag {
   padding: .4em .7em;
   font-size: 12px;
@@ -321,4 +326,23 @@ items
 
 .job-tags ul {
   flex-wrap: wrap;
+}
+
+/*
+=======
+Hover
+=======
+*/
+
+.header .tag:hover .filter-icon{
+  background-color: var(--very-dark-cyan);
+}
+
+.container .tag:hover {
+  background-color: var(--desaturated-dark-cyan);
+  color: var(--light-cyan-filter-tablets);
+}
+
+.job p:hover {
+  color: var(--desaturated-dark-cyan);
 }

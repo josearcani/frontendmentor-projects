@@ -1,0 +1,50 @@
+.header {
+  background-color: var(--desaturated-dark-cyan);
+  background-image: url(../images/bg-header-desktop.svg);
+}
+
+.show {
+  margin-bottom: 4em
+}
+
+.job-item {
+  margin-bottom: 2em;
+  padding: 2em;
+  align-items: center;
+}
+
+.grid-main-area {
+  display: grid;
+  grid-template-columns: repeat(9, 1fr);
+  grid-template-areas:
+    "logo info info info info tags tags tags tags"
+    "logo info info info info tags tags tags tags"
+    "logo info info info info tags tags tags tags"
+  ;
+}
+
+.job-image {
+  grid-area: logo;
+  position: relative;
+  width: 100px;
+  border-radius: 50%;
+  transform: translate(0, 0);
+}
+
+.job-info {
+  grid-area: info;
+}
+
+.line {
+  display: none;
+}
+
+.job-tags {
+  grid-area: tags;
+  justify-self: end;
+}
+
+.job-info > div {
+  margin-bottom: .9em;
+  margin-left: 1em;
+}
