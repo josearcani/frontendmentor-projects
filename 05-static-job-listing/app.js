@@ -226,6 +226,7 @@ function showFiltered(tagName) {
 function showFilters(e, flag=true) {
   filterBox() /* show the filterbox */
   const tagName = e.currentTarget.textContent
+  if (filteredArray.includes(tagName)) return /* prevent repeated filters */
   filteredArray.push(tagName)
   c(filteredArray)
   prepareFilterTags(filteredArray)
