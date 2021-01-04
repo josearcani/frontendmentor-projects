@@ -151,6 +151,7 @@ const data = [
   }
 ]
 const c = console.log
+let copiedData = data.slice()
 let filteredArray = []
 /*
 ========
@@ -162,10 +163,18 @@ const filterContainer = document.querySelector('.filters ul')
 const jobsContainer = document.querySelector('.container')
 
 const clear = document.querySelector('.clear')
-clear.addEventListener('click', () => {
+clear.addEventListener('click', cleanAll)
+
+function cleanAll() {
   header.classList.remove('show')
   filteredArray = []
-})
+  showJobs(data)
+  copiedData = data
+}
+
+function filterBox() {
+  header.classList.add('show')
+}
 
 window.addEventListener('DOMContentLoaded', function() {
   showJobs(data)
@@ -183,10 +192,11 @@ function getIndex(item, parent) {
 
 /* deleteing filters */
 function deleteFilter(e) {
-  // c(e.currentTarget.parentElement.childNodes)
   const parentNode = e.currentTarget.parentElement.childNodes
   const index = getIndex(e.currentTarget, parentNode)
   filteredArray.splice(index, 1)
+  c(filteredArray)
+  if (filteredArray.length === 0) cleanAll()
   prepareFilterTags(filteredArray)
 }
 
@@ -199,17 +209,27 @@ function prepareFilterTags(arr) {
   flags.forEach(flag => flag.addEventListener('click', deleteFilter))
 }
 
-function filterBox() {
-  header.classList.add('show')
+/* showfiltered */
+function showFiltered(tagName) {
+  const newArr = copiedData.filter(ele => {
+  const tools = [...ele.languages,...ele.tools,ele.role,ele.level]
+  for (let i = 0; i < tools.length; i++) {
+    if (tools[i] === tagName) return true
+    }
+  })
+  copiedData = newArr
+  console.log(newArr)
+  showJobs(newArr)
 }
 
 /* print filters */
-function showFilters(e) {
-  filterBox()
+function showFilters(e, flag=true) {
+  filterBox() /* show the filterbox */
   const tagName = e.currentTarget.textContent
   filteredArray.push(tagName)
   c(filteredArray)
   prepareFilterTags(filteredArray)
+  showFiltered(tagName)
 }
 
 /* print jobs */
