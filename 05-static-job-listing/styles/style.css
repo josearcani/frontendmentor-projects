@@ -283,6 +283,7 @@ items
 }
 
 .special .job-flags {display: block;}
+.justNew .job-flags {display: block;}
 .flag {
   padding: .4em .7em;
   font-size: 12px;
